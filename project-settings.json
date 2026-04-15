@@ -1,0 +1,29 @@
+{
+  "// SCOPE": "Project-level: .claude/settings.json (commit to git)",
+  "// PURPOSE": "Shared team conventions for this specific project",
+
+  "// --- Permissions: project-specific safe tools ---": "",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(git *)",
+      "Bash(make *)",
+      "Bash(cmake *)",
+      "Bash(ctest *)"
+    ],
+    "deny": []
+  },
+
+  "// --- Hooks: example with beads ---": "",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "bd prime 2>/dev/null || true" }
+        ]
+      }
+    ]
+  }
+}

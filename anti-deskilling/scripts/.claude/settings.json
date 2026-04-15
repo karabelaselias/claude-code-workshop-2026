@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/eliaskarabelas/.claude/skills/anti-deskilling/scripts/engagement-gate.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/eliaskarabelas/.claude/skills/anti-deskilling/scripts/reset-counter.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

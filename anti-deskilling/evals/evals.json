@@ -1,0 +1,23 @@
+{
+  "skill_name": "anti-deskilling",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I need to refactor the data pipeline in our backend. Right now it's a monolithic function that fetches from 3 APIs, transforms the data, and writes to the database. I want to break it into separate stages with a message queue between them. Can you implement this? The current code is in src/pipeline.py.",
+      "expected_output": "Claude should produce a skeleton/outline with the scaffolding written (imports, class structure, queue setup boilerplate) but the domain-critical parts left as gaps — specifically: the stage boundaries (what goes in each stage), the failure/retry strategy, and the data transformation logic. Gaps should include context questions to help the user think. Should NOT produce a complete implementation. Should NOT defer to q-frame or q-reason instead of firing anti-deskilling.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "ok here's what I need done today: 1) add retry logic to the API client 2) switch the ORM from SQLAlchemy to Tortoise 3) implement the new pricing algorithm from the spec 4) update all the tests. just get it all done, I have meetings all day",
+      "expected_output": "Claude should triage: items 1, 2, and 4 are mechanical (implement freely). Item 3 (pricing algorithm) is domain-critical — Claude should provide an outline with gaps for the core pricing logic, not a full implementation. Should start on the mechanical items immediately and deliver the outline for item 3 alongside.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "the linter is complaining about unused imports and inconsistent quote styles across the whole project. can you fix all of them?",
+      "expected_output": "HOOTL — mechanical cleanup. Claude should just do it. No outline, no engagement gate, no questions. Zero anti-deskilling friction.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "// SCOPE": "User-level: ~/.claude/settings.json",
+  "// PURPOSE": "Your personal defaults across ALL projects",
+
+  "// --- Model & Effort ---": "",
+  "model": "sonnet",
+  "effort": "medium",
+
+  "// --- Permissions: sensible defaults ---": "",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(git *)",
+      "Bash(npm test)",
+      "Bash(npm run *)",
+      "Bash(python -m pytest *)"
+    ],
+    "deny": []
+  },
+
+  "// --- Privacy ---": "",
+  "env": {
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1"
+  }
+}
