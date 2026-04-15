@@ -28,8 +28,26 @@ Two hooks:
 
 ### 1. PreToolUse gate (`engagement-gate.sh`)
 
-Fires before every `Write` or `Edit` tool call. Decides whether to let it
-through or pause for user confirmation based on:
+Fires before every `Write` or `Edit` tool call — **but only activates
+when all three conditions are true**:
+
+1. The call originates from the main session, not a subagent
+   (subagents have no interactive human to answer "ask")
+2. Permission mode is `default` — `acceptEdits`, `bypassPermissions`,
+   and `plan` all skip the gate entirely
+3. The cwd (or an ancestor directory up to `$HOME`) has an opt-in
+   signal:
+   - `.haft/` directory
+   - `.quint/` directory
+   - `.anti-deskilling/` directory
+   - `CLAUDE.md` containing the string `anti-deskilling`
+
+If any condition fails, the hook exits silently and the edit proceeds
+normally. This is deliberate: the gate is designed for thinking-work in
+projects where you've opted in, not as a global speed bump.
+
+Once the gate is active, it decides whether to pause for confirmation
+based on change size:
 
 | Change type | Behavior |
 |---|---|
@@ -120,6 +138,12 @@ intact. It also cleans up temporary state files.
 - Start a new Claude Code session after installing (hooks load at session start)
 - Check with `/hooks` in Claude Code to see active hooks
 - Verify scripts are executable: `ls -la scripts/*.sh`
+- Check activation conditions (see "What Gets Installed" above). The gate
+  is silent unless: main session, `default` permission mode, and a project
+  signal (`.haft/`, `.quint/`, `.anti-deskilling/`, or `CLAUDE.md`
+  mentioning `anti-deskilling`) is present in cwd or an ancestor
+- To force the gate on for a project without those markers, create an
+  empty `.anti-deskilling/` directory: `mkdir .anti-deskilling`
 
 **Too many prompts:**
 - Raise the thresholds in `engagement-gate.sh`
