@@ -176,3 +176,13 @@ Since September 2025, Anthropic trains on **Free/Pro/Max data by default**. If y
 `claude.ai/settings/data-privacy-controls`
 
 Team and Enterprise accounts are never used for training.
+
+---
+
+## Disclaimer
+
+These materials are provided for educational purposes only. The author makes no warranties, express or implied, regarding the accuracy, completeness, or fitness for any particular purpose of the information contained herein. Third-party tools referenced (Claude Code, haft, Beads) are subject to their own terms and may change at any time. Use at your own risk.
+
+---
+
+© 2026 Elias Karabelas / numericor. All rights reserved. See LICENSE for terms.
