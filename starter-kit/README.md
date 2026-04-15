@@ -181,6 +181,8 @@ Team and Enterprise accounts are never used for training.
 
 ## Disclaimer
 
+This workshop and these materials were created by Elias Karabelas in a personal capacity. They are not affiliated with, endorsed by, or conducted on behalf of numericor. The views, workflows, and recommendations expressed here are solely those of the author and do not represent numericor's products, services, or business activities.
+
 These materials are provided for educational purposes only. The author makes no warranties, express or implied, regarding the accuracy, completeness, or fitness for any particular purpose of the information contained herein. Third-party tools referenced (Claude Code, haft, Beads) are subject to their own terms and may change at any time. Use at your own risk.
 
 ---
